@@ -2,6 +2,7 @@
 import { defineConfig } from "sanity";
 // We need this to be able to view the Sanity Studio at all
 import { deskTool } from "sanity/desk";
+import schemas from "@/sanity/schemas";
 
 const config = defineConfig({
   // We will move this into an environmental variable but it's okay that it's public
@@ -13,6 +14,7 @@ const config = defineConfig({
   // URL of where we want our Sanity Studio to live within the project
   basePath: "/studio",
   plugins: [deskTool()],
+  schema: { types: schemas },
 });
 
 export default config;
